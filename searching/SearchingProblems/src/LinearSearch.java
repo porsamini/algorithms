@@ -1,5 +1,3 @@
-package search;
-
 // Initialization: Initialize the index to 0 assuming the item will never be found
 // and make sure the index is less than the length of the item array
 //
@@ -12,7 +10,7 @@ package search;
 public class LinearSearch {
     public static void main(String[] args) {
         int[] items = { 1, 2, 3, 4, 5, 6, 7 };
-        int search = 1, i = 0;
+        int search = 7, i = 0;
         while(i < items.length && items[i] != search)
             i++;
         if(i == items.length) {

@@ -1,5 +1,3 @@
-package sorting;
-
 public class InsertionSort {
 	public static void main(String[] args) {
 		int[] sample = {8, 6, 1, 5, 3, 0, 2, 3};

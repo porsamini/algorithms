@@ -1,5 +1,3 @@
-package sorting;
-
 class MergeSort{
 	public void mergeSort(int[] A, int p, int r) {
 		if(p < r) {

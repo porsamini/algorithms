@@ -1,5 +1,3 @@
-package sorting;
-
 public class SelectionSort {
 	public static void main(String[] args) {
 		int[] A = {8, 6, 1, 5, 3, 0, 2, 3};
