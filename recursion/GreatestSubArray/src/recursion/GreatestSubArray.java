@@ -3,57 +3,71 @@ package recursion;
 public class GreatestSubArray {
 	int[] A = {13, -3, -25, 20, -3, -16, -23, 18,
 		20, -7, 12, -5, -22, 15, -4, 7};
-	int gSum = -1000000, i, j;
-
-	public int[] getA() {
-		return this.A;
-	}
-
-	public void setI(int i) {
-		this.i = i;
-	}
-
-	public void setJ(int j) {
-		this.j = j;
-	}
-
-	public int getI() {
-		return this.i;
-	}
-
-	public int getJ() {
-		return this.j;
-	}
-
-	public int getGSum() {
-		return this.gSum;
-	}
-
-	public int[] find(int start, int end) {
+	int[] greatestMatrix = {-1000000, -1, -1};
+	
+	public int[] findGreatest(int start, int end) {
 		int mid = (start + end)/2;
 		if(start < end) {
-			find(start, mid);
-			find(mid+1, end);
-			sumUp(start, end);
+			findGreatest(start, mid);
+			int[] leftMatrix = sumUp(start, mid);
+			findGreatest(mid+1, end);
+			int[] rightMatrix = sumUp(mid+1, end);
+			int[] midMatrix = findCrossOverGreatest(start, mid, end);
+			if(leftMatrix[0] >= rightMatrix[0] && leftMatrix[0] >= midMatrix[0])
+				greatestMatrix = leftMatrix;
+			else if(rightMatrix[0] >= leftMatrix[0] && rightMatrix[0] >= midMatrix[0])
+				greatestMatrix = rightMatrix;
+			else {
+				greatestMatrix = midMatrix;
+			}
 		}
-		int[] returnGreatestSum = {this.getI(), this.getJ(), this.getGSum()};
-		return returnGreatestSum;
+		return greatestMatrix;
+	}
+	
+	public int[] findCrossOverGreatest(int i1, int j1, int k1) {
+		int leftSum = -1111111;
+		int sum = 0;
+		int i = j1;
+		int minLeft = -1, maxRight = -1;
+		while(i > i1) {
+			sum += A[i];
+			if(sum > leftSum) {
+				leftSum = sum;
+				minLeft = i;
+			}
+			i--;
+		}
+		int rightSum = -1111111;
+		i = j1+1;
+		sum = 0;
+		while(i < k1) {
+			sum += A[i];
+			if(sum > rightSum) {
+				rightSum = sum;
+				maxRight = i;
+			}
+			i++;
+		}
+		
+		int[] response = {(leftSum+rightSum), minLeft, maxRight};
+		return response;
 	}
 
-	public void sumUp(int i1, int j1) {
+	public int[] sumUp(int i1, int j1) {
+		int[] response = {-1111111, -1, -1};
 		if(i1 == j1) {
-			this.gSum = this.getA()[i1];
-			this.setI(i1);
-			this.setJ(j1);
-			return;
+			response = new int[]{A[i1], i1, j1};
 		}
 		else{
-		    int thisSum = this.getA()[i1] + this.getA()[j1];
-		    if(this.gSum < thisSum) {
-			    this.gSum = thisSum;
-			    this.i = i1;
-			    this.j = j1;
-		    }
+			int sum = 0, minSum = -111111;
+			for(int i = i1; i <= j1; i++) {
+				sum += A[i];
+				if(sum > minSum) {
+					minSum = sum;
+					response = new int[]{minSum, i1, j1};
+				}
+			}
 	    }
+		return response;
 	}
 }
