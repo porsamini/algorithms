@@ -1,3 +1,8 @@
+package algorithms.searching;
+
+import algorithms.searching.linearsearch.LinearSearch;
+import algorithms.data.CustomArray;
+
 // Initialization: Initialize the index to 0 assuming the item will never be found
 // and make sure the index is less than the length of the item array
 //
@@ -7,17 +12,18 @@
 // or the element was found before the loop ran through all the items in the array,
 // yielding the value of the index at which the element was found
 
-public class LinearSearch {
+public class ExecuteLinearSearch {
     public static void main(String[] args) {
-        int[] items = { 1, 2, 3, 4, 5, 6, 7 };
-        int search = 7, i = 0;
-        while(i < items.length && items[i] != search)
-            i++;
-        if(i == items.length) {
+		CustomArray customArray = new CustomArray();
+        int[] list = customArray.getList();
+        int search = 7;
+        LinearSearch linearSearch = new LinearSearch();
+        int index = linearSearch.search(list, search);
+        if(index == -1) {
             System.out.println("Cannot be found");
         }
         else{
-            System.out.println("Found at: "+i);
+            System.out.println("Found at: "+index);
         }
     }
 }

@@ -1,9 +1,0 @@
-public class ExecuteGreatestSubArray {
-	public static void main(String[] args) {
-		GreatestSubArray gSubArray = new GreatestSubArray();
-		int[] greatestSubArray = gSubArray.findGreatest(0, gSubArray.A.length - 1);
-		for(int i: greatestSubArray) {
-			System.out.println(i);
-		}
-	}
-}
