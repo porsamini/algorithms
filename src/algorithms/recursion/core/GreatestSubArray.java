@@ -1,8 +1,8 @@
-package algorithms.recursion;
+package algorithms.recursion.core;
 
 public class GreatestSubArray {
 	int[] list;
-	GreatestSubArray(int[] list){
+	public GreatestSubArray(int[] list){
 		this.list = list;
 	}
 	int[] greatestMatrix = {-1000000, -1, -1};

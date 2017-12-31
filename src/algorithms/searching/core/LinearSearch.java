@@ -1,4 +1,4 @@
-package algorithms.searching.linearsearch;
+package algorithms.searching.core;
 
 public class LinearSearch {
 	public int search(int[] list, int search) {
