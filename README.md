@@ -5,16 +5,16 @@ This repo is for comparing the performance of algorithms that solves a given pro
 ## Techniques
 
 * Sorting
-** InsertionSort
-** ReverseSort
-** SelectionSort
-** MergeSort
+    * InsertionSort
+    * ReverseSort
+    * SelectionSort
+    * MergeSort
 
 * Finding the largest consecutive sub-array
-** Recursion
+     * Recursion
 
 * Searching
-** Linear Search
+     * Linear Search
 
 ## Processor
 2.6 GHz Intel Core i7
