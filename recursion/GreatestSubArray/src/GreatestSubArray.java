@@ -1,7 +1,5 @@
-package recursion;
-
 public class GreatestSubArray {
-	int[] A = {13, 3, 25, 20, -3, -16, -23, 18,
+	int[] A = {13, -3, -25, 20, -3, -16, -23, 18,
 		20, -7, 12, -5, -22, 15, -4, 7};
 	int[] greatestMatrix = {-1000000, -1, -1};
 	
