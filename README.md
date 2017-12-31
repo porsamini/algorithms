@@ -1,6 +1,6 @@
 # Algorithms
 
-This repo is for comparing the performance of algorithms that solves a given problem for a given input size
+This repo is for comparing the performance of algorithms that solves a given problem with input size of 1 million
 
 ## Techniques
 
