@@ -32,11 +32,11 @@ Execution Time for MergeSort: ~263 milliseconds
 ### Recursion
 
 ```
-Execution Time for finding the largest consecutive sub-array using recursion: 231 milliseconds
+Execution Time for finding the largest consecutive sub-array using recursion: ~231 milliseconds
 ```
 
 ### Linear search
 
 ```
-Execution Time for LinearSearch: 39 milliseconds
+Execution Time for LinearSearch: ~39 milliseconds
 ```
