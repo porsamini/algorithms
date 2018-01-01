@@ -1,5 +1,5 @@
-package algorithms.recursion;
-import algorithms.recursion.core.GreatestSubArray;
+package algorithms.greatestsubarray;
+import algorithms.greatestsubarray.core.recursive.GreatestSubArray;
 import algorithms.data.LongLeanRandomArray;
 
 public class ExecuteGreatestSubArray {

@@ -1,4 +1,4 @@
-package algorithms.recursion.core;
+package algorithms.greatestsubarray.core.recursive;
 
 public class GreatestSubArray {
 	int[] list;
