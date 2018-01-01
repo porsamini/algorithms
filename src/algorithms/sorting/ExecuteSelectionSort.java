@@ -1,13 +1,13 @@
 package algorithms.sorting;
 
-import algorithms.data.LongRandomArray;
+import algorithms.data.LongHeavyRandomArray;
 import algorithms.sorting.core.SelectionSort;
 
 public class ExecuteSelectionSort {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		LongRandomArray longRandomArray = new LongRandomArray();
-		int[] list = longRandomArray.getList();
+		LongHeavyRandomArray longHeavyRandomArray = new LongHeavyRandomArray();
+		int[] list = longHeavyRandomArray.getList();
 		SelectionSort selectionSort = new SelectionSort(list);
 		list = selectionSort.sort();
 		long stop = System.currentTimeMillis();

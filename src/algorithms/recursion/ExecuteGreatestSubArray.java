@@ -1,12 +1,12 @@
 package algorithms.recursion;
 import algorithms.recursion.core.GreatestSubArray;
-import algorithms.data.LongRandomArray;
+import algorithms.data.LongLeanRandomArray;
 
 public class ExecuteGreatestSubArray {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		LongRandomArray longRandomArray = new LongRandomArray();
-		int[] list = longRandomArray.getList();
+		LongLeanRandomArray longLeanRandomArray = new LongLeanRandomArray();
+		int[] list = longLeanRandomArray.getList();
 		GreatestSubArray gSubArray = new GreatestSubArray(list);
 		int[] greatestSubArray = gSubArray.findGreatest(0, list.length - 1);
 		for(int i: greatestSubArray) {

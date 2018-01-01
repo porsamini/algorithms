@@ -1,7 +1,7 @@
 package algorithms.searching;
 
 import algorithms.searching.core.LinearSearch;
-import algorithms.data.LongRandomArray;
+import algorithms.data.LongHeavyRandomArray;
 
 // Initialization: Initialize the index to 0 assuming the item will never be found
 // and make sure the index is less than the length of the item array
@@ -15,8 +15,8 @@ import algorithms.data.LongRandomArray;
 public class ExecuteLinearSearch {
     public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		LongRandomArray longRandomArray = new LongRandomArray();
-		int[] list = longRandomArray.getList();
+		LongHeavyRandomArray longHeavyRandomArray = new LongHeavyRandomArray();
+		int[] list = longHeavyRandomArray.getList();
         int search = list[999999];
         LinearSearch linearSearch = new LinearSearch();
         int index = linearSearch.search(list, search);

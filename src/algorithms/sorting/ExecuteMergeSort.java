@@ -1,12 +1,12 @@
 package algorithms.sorting;
 import algorithms.sorting.core.*;
-import algorithms.data.LongRandomArray;
+import algorithms.data.LongHeavyRandomArray;
 
 public class ExecuteMergeSort {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		LongRandomArray longRandomArray = new LongRandomArray();
-		int[] list = longRandomArray.getList();
+		LongHeavyRandomArray longHeavyRandomArray = new LongHeavyRandomArray();
+		int[] list = longHeavyRandomArray.getList();
 		int p = 0, r = list.length-1;
 		MergeSort mergeSort = new MergeSort();
 		mergeSort.mergeSort(list, p, r);

@@ -1,13 +1,13 @@
 package algorithms.sorting;
 
-import algorithms.data.LongRandomArray;
+import algorithms.data.LongHeavyRandomArray;
 import algorithms.sorting.core.ReverseSort;
 
 public class ExecuteReverseSort {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		LongRandomArray longRandomArray = new LongRandomArray();
-		int[] list = longRandomArray.getList();
+		LongHeavyRandomArray longHeavyRandomArray = new LongHeavyRandomArray();
+		int[] list = longHeavyRandomArray.getList();
 		ReverseSort reverseSort = new ReverseSort(list);
 		list = reverseSort.sort();
 		long stop = System.currentTimeMillis();
