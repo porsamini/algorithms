@@ -28,7 +28,9 @@ public class ExecuteBFS {
 		bfs.traverse(source);
 
 		for(BFSNode node: bfs.getAdjacencyList()) {
-			System.out.println(node.getValue()+": "+node.getDistance()+" hops");
+			String distance = Integer.toString(node.getDistance());
+			if(node.getValue() != source && node.getDistance() == 0) {distance = "infinite";}
+			System.out.println(node.getValue()+": "+distance+" hop(s)");
 		}
 	}
 }
