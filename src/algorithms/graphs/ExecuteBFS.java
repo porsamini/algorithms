@@ -1,21 +1,21 @@
 package algorithms.graphs;
-import algorithms.data.TwoDCustomArray;
+import algorithms.data.AdjacencyList;
 import algorithms.graphs.core.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExecuteBFS {
 	public static void main(String[] args) {
+		long start = System.currentTimeMillis();
 		List<BFSNode> adjacencyList = new ArrayList<BFSNode>();
-		TwoDCustomArray twoD = new TwoDCustomArray();
-		int[][] list = twoD.getList();
-		for(int i = 0; i < list.length; i++) {
+		List<List<Integer>> list = new AdjacencyList().getList();
+		for(int i = 0; i < list.size(); i++) {
 			adjacencyList.add(new BFSNode(i));
 		}
 
-		for(int i = 0; i < list.length; i++) {
-			for(int j = 0; j < list[i].length; j++) {
-				BFSNode bfsNode = adjacencyList.get(list[i][j]);
+		for(int i = 0; i < list.size(); i++) {
+			for(int j = 0; j < list.get(i).size(); j++) {
+				BFSNode bfsNode = adjacencyList.get(list.get(i).get(j));
 				adjacencyList.get(i).addNodes(bfsNode);
 			}
 		}
@@ -27,10 +27,13 @@ public class ExecuteBFS {
 		sourceNode.setVisited(true);
 		bfs.traverse(source);
 
+		long stop = System.currentTimeMillis();
+
 		for(BFSNode node: bfs.getAdjacencyList()) {
 			String distance = Integer.toString(node.getDistance());
 			if(node.getValue() != source && node.getDistance() == 0) {distance = "infinite";}
 			System.out.println(node.getValue()+": "+distance+" hop(s)");
 		}
+		System.out.println("Execution Time for BFS: "+(stop - start)+" milliseconds");
 	}
 }
