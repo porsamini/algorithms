@@ -2,13 +2,13 @@ package algorithms.data;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BFSNode {
+public class GraphNode {
 	int distance;
 	int value;
 	boolean visited;
-	List<BFSNode> nodes = new ArrayList<BFSNode>();
+	List<GraphNode> nodes = new ArrayList<GraphNode>();
 
-	public BFSNode(int value) {
+	public GraphNode(int value) {
 		this.value = value;
 	}
 
@@ -36,11 +36,11 @@ public class BFSNode {
 		this.visited = tf;
 	}
 
-	public void addNodes(BFSNode node) {
+	public void addNodes(GraphNode node) {
 		this.nodes.add(node);
 	}
 
-	public List<BFSNode> getNodes() {
+	public List<GraphNode> getNodes() {
 		return this.nodes;
 	}
 }
