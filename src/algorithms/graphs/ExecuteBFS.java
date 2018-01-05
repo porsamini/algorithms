@@ -1,28 +1,40 @@
 package algorithms.graphs;
 import algorithms.data.AdjacencyList;
 import algorithms.graphs.core.*;
-import java.util.ArrayList;
+import algorithms.data.BFSNode;
 import java.util.List;
-
+/**
+ *
+ * @author Vineeth Pradhan
+ * ---With Integer as Adjacency List-------
+ * ----------------------------------------
+ * Execution Time for BFS: 424 milliseconds
+ * int adjacencyListLengthLimit = 1000000;
+ * int internalLengthLimit = 3;
+ * ----------------------------------------
+ * Execution Time for BFS: 71 milliseconds
+ * int adjacencyListLengthLimit = 4000;
+ * int internalLengthLimit = 90;
+ * ----------------------------------------
+ * ---With Node as Adjacency List----------
+ * ----------------------------------------
+ * Execution Time for BFS: 357 milliseconds
+ * int adjacencyListLengthLimit = 1000000;
+ * int internalLengthLimit = 3;
+ * ----------------------------------------
+ * Execution Time for BFS: 39 milliseconds
+ * int adjacencyListLengthLimit = 4000;
+ * int internalLengthLimit = 90;
+ *
+ */
 public class ExecuteBFS {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		List<BFSNode> adjacencyList = new ArrayList<BFSNode>();
-		List<List<Integer>> list = new AdjacencyList().getList();
-		for(int i = 0; i < list.size(); i++) {
-			adjacencyList.add(new BFSNode(i));
-		}
-
-		for(int i = 0; i < list.size(); i++) {
-			for(int j = 0; j < list.get(i).size(); j++) {
-				BFSNode bfsNode = adjacencyList.get(list.get(i).get(j));
-				adjacencyList.get(i).addNodes(bfsNode);
-			}
-		}
-
+		List<BFSNode> list = new AdjacencyList().getList();
 		int source = 2;
-		BFS bfs = new BFS(adjacencyList);
-		BFSNode sourceNode = adjacencyList.get(source);
+
+		BFS bfs = new BFS(list);
+		BFSNode sourceNode = list.get(source);
 		sourceNode.setDistance(0);
 		sourceNode.setVisited(true);
 		bfs.traverse(source);

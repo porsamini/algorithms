@@ -1,4 +1,4 @@
-package algorithms.graphs.core;
+package algorithms.data;
 import java.util.List;
 import java.util.ArrayList;
 
