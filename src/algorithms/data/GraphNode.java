@@ -16,14 +16,6 @@ public class GraphNode {
 		return this.visited;
 	}
 
-	public void setDistance(int dist) {
-		this.distance = dist;
-	}
-
-	public int getDistance() {
-		return this.distance;
-	}
-
 	public void setValue(int value) {
 		this.value = value;
 	}
@@ -38,9 +30,5 @@ public class GraphNode {
 
 	public void addNodes(GraphNode node) {
 		this.nodes.add(node);
-	}
-
-	public List<GraphNode> getNodes() {
-		return this.nodes;
 	}
 }

@@ -1,7 +1,7 @@
 package algorithms.graphs;
 import algorithms.data.AdjacencyList;
 import algorithms.graphs.core.*;
-import algorithms.data.GraphNode;
+import algorithms.data.BFSNode;
 import java.util.List;
 /**
  *
@@ -30,18 +30,18 @@ import java.util.List;
 public class ExecuteBFS {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		List<GraphNode> list = new AdjacencyList().getList();
+		List<BFSNode> list = new AdjacencyList().getList();
 		int source = 2;
 
 		BFS bfs = new BFS(list);
-		GraphNode sourceNode = list.get(source);
+		BFSNode sourceNode = list.get(source);
 		sourceNode.setDistance(0);
 		sourceNode.setVisited(true);
 		bfs.traverse(source);
 
 		long stop = System.currentTimeMillis();
 
-		for(GraphNode node: bfs.getAdjacencyList()) {
+		for(BFSNode node: bfs.getAdjacencyList()) {
 			String distance = Integer.toString(node.getDistance());
 			if(node.getValue() != source && node.getDistance() == 0) {distance = "infinite";}
 			System.out.println(node.getValue()+": "+distance+" hop(s)");

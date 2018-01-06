@@ -3,30 +3,30 @@ import java.util.Queue;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import algorithms.data.GraphNode;
+import algorithms.data.BFSNode;
 
 // With a condition that a node doesn't point to itself
 public class BFS {
 	Queue<Integer> que = new LinkedList<Integer>();
 	int hop=0;
-	List<GraphNode> adjacencyList;
+	List<BFSNode> adjacencyList;
 
-	public BFS(List<GraphNode> adjacencyList) {
+	public BFS(List<BFSNode> adjacencyList) {
 		this.adjacencyList = adjacencyList;
 	}
 
-	public List<GraphNode> getAdjacencyList(){
+	public List<BFSNode> getAdjacencyList(){
 		return this.adjacencyList;
 	}
 
 	public void traverse(int source) {
-		GraphNode sourceNode = this.adjacencyList.get(source);
+		BFSNode sourceNode = this.adjacencyList.get(source);
 
-		List<GraphNode> childNodes = sourceNode.getNodes();
+		List<BFSNode> childNodes = sourceNode.getNodes();
 		if(!childNodes.isEmpty()) {
 			hop++;
 		}
-		for(GraphNode node: childNodes) {
+		for(BFSNode node: childNodes) {
 			if(!(node.getVisited())) {
 				que.add(node.getValue());
 				node.setVisited(true);
