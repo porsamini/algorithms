@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BFSNode extends GraphNode {
-	List<BFSNode> nodes = new ArrayList<BFSNode>();
 	int distance;
+	List<BFSNode> nodes = new ArrayList<BFSNode>();
 	
 	public BFSNode(int source) {
 		super(source);

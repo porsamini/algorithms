@@ -1,6 +1,5 @@
 package algorithms.graphs;
-import algorithms.data.AdjacencyList;
-import algorithms.graphs.core.*;
+import algorithms.graphs.core.BFS;
 import algorithms.data.BFSNode;
 import java.util.List;
 /**
@@ -25,15 +24,16 @@ import java.util.List;
  * Execution Time for BFS: 39 milliseconds
  * int adjacencyListLengthLimit = 4000;
  * int internalLengthLimit = 90;
+ * ----------------------------------------
  *
  */
 public class ExecuteBFS {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		List<BFSNode> list = new AdjacencyList().getList();
 		int source = 2;
 
-		BFS bfs = new BFS(list);
+		BFS bfs = new BFS();
+		List<BFSNode> list = bfs.getAdjacencyList();
 		BFSNode sourceNode = list.get(source);
 		sourceNode.setDistance(0);
 		sourceNode.setVisited(true);

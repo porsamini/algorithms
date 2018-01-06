@@ -26,4 +26,12 @@ public class DFSNode extends GraphNode {
 	public void setEntry(int entry) {
 		this.entry = entry;
 	}
+
+	public void addNodes(DFSNode node) {
+		this.nodes.add(node);
+	}
+
+	public List<DFSNode> getNodes() {
+		return this.nodes;
+	}
 }

@@ -1,18 +1,36 @@
 package algorithms.graphs.core;
 import java.util.Queue;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import algorithms.data.BFSNode;
 
 // With a condition that a node doesn't point to itself
-public class BFS {
+public class BFS extends Graph {
 	Queue<Integer> que = new LinkedList<Integer>();
 	int hop=0;
-	List<BFSNode> adjacencyList;
+	List<BFSNode> adjacencyList = new ArrayList<BFSNode>();
 
-	public BFS(List<BFSNode> adjacencyList) {
-		this.adjacencyList = adjacencyList;
+	public BFS() {
+		setAdjacencyList();
+	}
+	
+	public void setAdjacencyList() {
+		for(int i = 0; i < adjacencyListLengthLimit; i++) {
+			adjacencyList.add(new BFSNode(i));
+		}
+
+		for(int i = 0; i < adjacencyListLengthLimit; i++) {
+			BFSNode externalNode = this.getAdjacencyList().get(i);
+			int randomLimit = random(internalLengthLimit);
+			for(int j = 0; j < randomLimit; j++) {
+				int value = this.random(internalWeightLimit);
+				BFSNode internalNode = this.adjacencyList.get(value);
+				if(externalNode.getNodes().contains(internalNode) || value == i) { j--; }
+				else { externalNode.addNodes(internalNode); }
+			}
+		}
 	}
 
 	public List<BFSNode> getAdjacencyList(){

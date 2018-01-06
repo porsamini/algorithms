@@ -1,12 +1,8 @@
 package algorithms.data;
-import java.util.List;
-import java.util.ArrayList;
 
-public class GraphNode {
-	int distance;
+public abstract class GraphNode {
 	int value;
 	boolean visited;
-	List<GraphNode> nodes = new ArrayList<GraphNode>();
 
 	public GraphNode(int value) {
 		this.value = value;
@@ -16,19 +12,15 @@ public class GraphNode {
 		return this.visited;
 	}
 
+	public void setVisited(boolean visited) {
+		this.visited = visited;
+	}
+
 	public void setValue(int value) {
 		this.value = value;
 	}
 
 	public int getValue() {
 		return this.value;
-	}
-
-	public void setVisited(boolean tf) {
-		this.visited = tf;
-	}
-
-	public void addNodes(GraphNode node) {
-		this.nodes.add(node);
 	}
 }
