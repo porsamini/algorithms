@@ -5,3 +5,7 @@
 README.md
 .project
 .gitignore
+.dockerignore
+Dockerfile
+.DS_Store
+build.sh
