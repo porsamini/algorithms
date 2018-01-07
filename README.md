@@ -19,6 +19,17 @@ This repo is for comparing the performance of algorithms that solves a given pro
 * Graphs
      * Breadth First Search
 
+## Run it yourself
+### To run and test the results on Docker
+* Install Docker 17 or later versions
+* Run the command `sh build.sh` in the terminal to create a docker and spin up an instance of the image
+* In the docker console, run the command `alg` and type in the algorithm namespace to run the test
+
+### To run and test the results locally
+* This repo runs on Java 1.8 and haven't been tested on earlier or later versions
+* Compile the source with the command `mkdir out/ && find src/algorithms/ -name "*.java" -exec javac -d out/ {} +`. This should create all the classfiles in `out/` directory
+* Run `java -cp out/ algorithms.sorting.ExecutionSort` to test the execution time on your local machine for insertion sort. Check algorithm namespace for more examples
+
 ## Processor
 2.6 GHz Intel Core i7
 

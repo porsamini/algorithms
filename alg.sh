@@ -1,3 +1,4 @@
+#!/bin/bash
 while :
 do
 	printf "\nChoose:"
