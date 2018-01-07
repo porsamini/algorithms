@@ -1,0 +1,7 @@
+/out
+/bin
+/.git
+.classpath
+README.md
+.project
+.gitignore
