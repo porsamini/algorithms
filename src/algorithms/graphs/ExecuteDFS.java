@@ -26,12 +26,12 @@ public class ExecuteDFS {
 
 		long stop = System.currentTimeMillis();
 
-		for(DFSNode node: dfs.getAdjacencyList()) {
-			String entry = Integer.toString(node.getEntry());
-			String exit = Integer.toString(node.getExit());
-			if(node.getEntry() == 0) {entry = "infinite"; exit = "infinite";}
-			System.out.println(node.getValue()+": ["+entry+", "+exit+"]");
-		}
+//		for(DFSNode node: dfs.getAdjacencyList()) {
+//			String entry = Integer.toString(node.getEntry());
+//			String exit = Integer.toString(node.getExit());
+//			if(node.getEntry() == 0) {entry = "infinite"; exit = "infinite";}
+//			System.out.println(node.getValue()+": ["+entry+", "+exit+"]");
+//		}
 		System.out.println("Execution Time for DFS: "+(stop - start)+" milliseconds");
 	}
 }

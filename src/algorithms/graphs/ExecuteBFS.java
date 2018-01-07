@@ -41,11 +41,11 @@ public class ExecuteBFS {
 
 		long stop = System.currentTimeMillis();
 
-		for(BFSNode node: bfs.getAdjacencyList()) {
-			String distance = Integer.toString(node.getDistance());
-			if(node.getValue() != source && node.getDistance() == 0) {distance = "infinite";}
-			System.out.println(node.getValue()+": "+distance+" hop(s)");
-		}
+//		for(BFSNode node: bfs.getAdjacencyList()) {
+//			String distance = Integer.toString(node.getDistance());
+//			if(node.getValue() != source && node.getDistance() == 0) {distance = "infinite";}
+//			System.out.println(node.getValue()+": "+distance+" hop(s)");
+//		}
 		System.out.println("Execution Time for BFS: "+(stop - start)+" milliseconds");
 	}
 }
