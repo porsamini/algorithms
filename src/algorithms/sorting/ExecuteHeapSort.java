@@ -11,7 +11,7 @@ public class ExecuteHeapSort {
 		ShortLeanRandomArray A = new ShortLeanRandomArray();
 		int[] list = A.getList();
 		MaxHeap mh = new MaxHeap();
-		mh.build(list);
+		mh.heapify(list, 0);
 		List<Node> heapNodes = mh.get();
 		
 		for(int i = 0; i < heapNodes.size(); i++) {

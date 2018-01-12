@@ -6,33 +6,21 @@ import java.util.List;
 
 public class MaxHeap {
 	List<Node> nodes = new ArrayList<Node>();
-	public void build(int[] list) {
-		build(nodes, 0);
-//		for(int i = 0; i < list.length; i++) {
-//			Node node = new Node(list[i]);
-//			nodes.add(i, node);
-			
-			// parent: i/2
-			// lChild: 2i
-			// rChild: 2i+1
-//		}
-	}
-	
-	public void build(List<Node> subHeap, int index) {
+	public void heapify(int[] list, int index) {
+		Node node = new Node(list[index]);
+		int largest;
 		if(index == 0) {
-			this.nodes.add(index, subHeap.get(index));
+			nodes.add(node);
 		}
 		else {
-			int parent = index/2;
-			int greatest;
-			if(subHeap.get(parent).getValue() > subHeap.get(index).getValue()) {
-				greatest = parent;
+			if(nodes.get(index).getValue() > list[index]) {
+				largest = index;
 			}
-			int lChild = index * 2;
-			int rChild = (index * 2) + 1;
 		}
 	}
-	
+//			if(subHeap.get(parent).getValue() > subHeap.get(index).getValue()) {
+//				largest = parent;
+//			}
 	public List<Node> get(){
 		return this.nodes;
 	}
