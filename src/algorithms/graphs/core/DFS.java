@@ -3,8 +3,6 @@ package algorithms.graphs.core;
 import java.util.ArrayList;
 import java.util.List;
 
-import algorithms.data.DFSNode;
-
 public class DFS extends Graph {
 
 	List<DFSNode> adjacencyList = new ArrayList<DFSNode>();

@@ -1,7 +1,7 @@
 package algorithms.graphs.core;
 
 public class Graph {
-	int adjacencyListLengthLimit = 1000000;
+	int adjacencyListLengthLimit = 6000;
 	int internalLengthLimit = 3;
 	int internalWeightLimit = adjacencyListLengthLimit;
 

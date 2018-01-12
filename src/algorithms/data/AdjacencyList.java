@@ -1,6 +1,11 @@
+/**
+ *  Unused
+ */
 package algorithms.data;
 import java.util.ArrayList;
 import java.util.List;
+
+import algorithms.graphs.core.BFSNode;
 
 public class AdjacencyList {
 	List<BFSNode> list = new ArrayList<BFSNode>();

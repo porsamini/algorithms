@@ -1,6 +1,7 @@
 package algorithms.graphs;
 import algorithms.graphs.core.DFS;
-import algorithms.data.DFSNode;
+import algorithms.graphs.core.DFSNode;
+
 import java.util.List;
 /**
  * @author Vineeth Pradhan

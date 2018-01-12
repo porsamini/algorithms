@@ -1,6 +1,7 @@
 package algorithms.graphs;
 import algorithms.graphs.core.BFS;
-import algorithms.data.BFSNode;
+import algorithms.graphs.core.BFSNode;
+
 import java.util.List;
 /**
  *

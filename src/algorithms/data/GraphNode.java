@@ -1,11 +1,11 @@
 package algorithms.data;
+import algorithms.data.Node;
 
-public abstract class GraphNode {
-	int value;
+public abstract class GraphNode extends Node {
 	boolean visited;
 
 	public GraphNode(int value) {
-		this.value = value;
+		super(value);
 	}
 
 	public boolean getVisited() {
@@ -14,13 +14,5 @@ public abstract class GraphNode {
 
 	public void setVisited(boolean visited) {
 		this.visited = visited;
-	}
-
-	public void setValue(int value) {
-		this.value = value;
-	}
-
-	public int getValue() {
-		return this.value;
 	}
 }

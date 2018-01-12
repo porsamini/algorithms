@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import algorithms.data.BFSNode;
 
 // With a condition that a node doesn't point to itself
 public class BFS extends Graph {
 	Queue<Integer> que = new LinkedList<Integer>();
 	int hop=0;
 	List<BFSNode> adjacencyList = new ArrayList<BFSNode>();
+	int lim;
 
 	public BFS() {
 		setAdjacencyList();
@@ -23,7 +23,8 @@ public class BFS extends Graph {
 
 		for(int i = 0; i < adjacencyListLengthLimit; i++) {
 			BFSNode externalNode = this.getAdjacencyList().get(i);
-			int randomLimit = random(internalLengthLimit);
+			int randomLimit = random(internalLengthLimit)+1;
+			lim = randomLimit;
 			for(int j = 0; j < randomLimit; j++) {
 				int value = this.random(internalWeightLimit);
 				BFSNode internalNode = this.adjacencyList.get(value);
@@ -57,5 +58,10 @@ public class BFS extends Graph {
 			traverse(u);
 		}
 		catch(NoSuchElementException ex) {}
+		catch(StackOverflowError ex) {
+			System.out.println(que.size());
+			System.out.println(lim);
+			System.out.println(ex);
+		}
 	}
 }

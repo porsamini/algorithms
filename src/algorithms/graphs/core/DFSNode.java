@@ -1,7 +1,9 @@
-package algorithms.data;
+package algorithms.graphs.core;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import algorithms.data.GraphNode;
 
 public class DFSNode extends GraphNode {
 	int entry, exit;
