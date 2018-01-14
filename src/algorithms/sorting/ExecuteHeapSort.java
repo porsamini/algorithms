@@ -1,23 +1,12 @@
 package algorithms.sorting;
-//import algorithms.data.ShortLeanRandomArray;
-//import algorithms.sorting.core.heapsort.HeapSort;
-//import algorithms.sorting.core.heapsort.MaxHeap;
-//import algorithms.data.Node;
-//import java.util.List;
+import algorithms.sorting.core.heapsort.MaxHeap;
 
 public class ExecuteHeapSort {
-
 	public static void main(String[] args) {
-//		ShortLeanRandomArray A = new ShortLeanRandomArray();
-		int[] list = {6, -1, 1, 7, 0, -6, -2, 3, -9, 4};
-//		int[] list = A.getList();
-//		MaxHeap mh = new MaxHeap();
-//		mh.heapify(list, 0);
-//		List<Node> heapNodes = mh.get();
-		
-//		for(int i = 0; i < heapNodes.size(); i++) {
-//			System.out.println(heapNodes.get(i).getValue());
-//		}
+		int[] list = { 7, 4, 10, 1, 16, 6, 8, 2, 5, 3 };
+		MaxHeap mh = new MaxHeap();
+		for(int i = 0; i < list.length; i++)
+			mh.add(list[i]);
+		mh.showAll();
 	}
-
 }
