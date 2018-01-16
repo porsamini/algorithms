@@ -4,7 +4,6 @@ import algorithms.data.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-// 7, 4, 10, 1, 16, 6, 8, 2, 5, 3
 public class MaxHeap {
 	List<Node> nodes = new ArrayList<Node>();
 	int size = 0;
@@ -23,6 +22,14 @@ public class MaxHeap {
 	public void showAll(){
 		for(Node node: nodes) {
 			System.out.println(node.getValue());
+		}
+	}
+
+	public void heapsort() {
+		for(int i = nodes.size() - 1; i >= 1; i--) {
+			swapNodes(0, i);
+			size--;
+			heapify(0);
 		}
 	}
 
@@ -49,9 +56,9 @@ public class MaxHeap {
 		return this.nodes.get(childIndex).getValue();
 	}
 
-	private void swapNodes(int largest, int index) {
-		Node temp = this.nodes.get(largest);
-		this.nodes.set(largest, this.nodes.get(index));
-		this.nodes.set(index, temp);
+	private void swapNodes(int a, int b) {
+		Node temp = this.nodes.get(a);
+		this.nodes.set(a, this.nodes.get(b));
+		this.nodes.set(b, temp);
 	}
 }
